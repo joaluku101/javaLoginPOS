@@ -6,6 +6,7 @@ public class MainFrame extends JFrame {
         /***********Info Panel********/
         JPanel infoPanel = new JPanel();
         infoPanel.setLayout(new GridLayout(0, 2, 5, 5));
+        infoPanel.setBorder(BorderFactory.createEmptyBorder(30, 50, 30,50));
         infoPanel.add(new JLabel("Name"));
         infoPanel.add(new JLabel(user.name));
         infoPanel.add(new JLabel("Email"));
@@ -16,11 +17,6 @@ public class MainFrame extends JFrame {
         infoPanel.add(new JLabel(user.address));
 
         add(infoPanel, BorderLayout.NORTH);
-
-
-
-
-
 
         setTitle("Dashboard");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
