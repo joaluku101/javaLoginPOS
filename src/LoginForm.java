@@ -96,7 +96,8 @@ public class LoginForm extends JFrame {
 
         /*************Initialize the Frame*********/
         add(formPanel, BorderLayout.NORTH);
-        add(formPanel, BorderLayout.SOUTH);
+     //   add(formPanel, BorderLayout.SOUTH);
+        add(buttonsPanel, BorderLayout.SOUTH);
 
 
         setTitle("Login Form");
