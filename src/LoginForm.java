@@ -63,14 +63,8 @@ public class LoginForm extends JFrame {
                     "Try again",
                     JOptionPane.ERROR_MESSAGE 
                     );
-                    
                 }
-
-                
             }
-
-
-            
         });
 
         JButton btnCancel = new JButton("Cancel");
@@ -81,8 +75,6 @@ public class LoginForm extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
                 dispose();
-
-                
             }
 
         } );
@@ -106,27 +98,39 @@ public class LoginForm extends JFrame {
         setMaximumSize(new Dimension(350, 450));
         setLocationRelativeTo(null);
         setVisible(true);
-
-
     }
 
     private User getAuthenticatedUser(String email, String password){
         User user = null;
 
-        final String DB_URL = "jdbc:mysql://localhost/MyStore?serverTimezone=UTC";
+        final String DB_URL = "jdbc:mysql://localhost:3306/raiweb_solutions";
         final String USERNAME = "root";
-        final String PASSWORD = "";
+        final String PASSWORD = "maragwe";
+
+       
+        
+        
 
         try {
+
             Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
             // Connected to database successfull...
+            System.out.println("Connected to database successfull...");
 
-            String sql = "SELECT * FROM users WHERE email=? AND password =?";
+
+
+        //    System.exit(ABORT);
+
+            String sql = "SELECT * FROM user WHERE email=? AND password =?";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setString(1, email);
             preparedStatement.setString(2, password);
 
+            
+
             ResultSet resultSet = preparedStatement.executeQuery();
+
+            
 
             if(resultSet.next()){
                 user = new User();
@@ -136,20 +140,20 @@ public class LoginForm extends JFrame {
                 user.address = resultSet.getString("address");
                 user.password = resultSet.getString("password");
 
-
-
+                System.exit(ABORT);
 
             }
 
             preparedStatement.close();
             conn.close();
 
-            
-
-
         } catch (Exception e) {
             // TODO: handle exception
             System.out.println("Database connection fail!");
+         //   JOptionPane.showMessageDialog(rootPane, e, PASSWORD, ABORT);
+
+        
+           // System.exit(ABORT);
         }
 
         return user;
