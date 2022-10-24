@@ -79,11 +79,30 @@ public class LoginForm extends JFrame {
 
         } );
 
+
+        JButton btnSignUp = new JButton("Sign Up");
+        btnSignUp.setFont(mainFont);
+        btnSignUp.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+
+             //   SignupForm SignupForm = new SignupForm();
+             //   SignupForm.setVisible(true);
+
+                Sign sign = new Sign();
+                sign.setVisible(true);
+            }
+
+        } );
+
         JPanel buttonsPanel = new JPanel();
         buttonsPanel.setLayout(new GridLayout(1, 2, 10, 0));
         buttonsPanel.setBorder(BorderFactory.createEmptyBorder(30, 50, 30,50));
         buttonsPanel.add(btnLogin);
         buttonsPanel.add(btnCancel);
+        buttonsPanel.add(btnSignUp);
 
 
         /*************Initialize the Frame*********/

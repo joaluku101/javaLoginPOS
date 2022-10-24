@@ -7,8 +7,6 @@ public class MainFrame extends JFrame {
         JPanel infoPanel = new JPanel();
         infoPanel.setLayout(new GridLayout(0, 2, 5, 5));
         infoPanel.setBorder(BorderFactory.createEmptyBorder(30, 50, 30,50));
-      //  infoPanel.add(new JLabel("Name"));
-      //  infoPanel.add(new JLabel(user.name));
         infoPanel.add(new JLabel("First Name"));
         infoPanel.add(new JLabel(user.FirstName));
         infoPanel.add(new JLabel("Second Name"));
