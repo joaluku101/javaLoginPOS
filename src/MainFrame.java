@@ -7,14 +7,24 @@ public class MainFrame extends JFrame {
         JPanel infoPanel = new JPanel();
         infoPanel.setLayout(new GridLayout(0, 2, 5, 5));
         infoPanel.setBorder(BorderFactory.createEmptyBorder(30, 50, 30,50));
-        infoPanel.add(new JLabel("Name"));
-        infoPanel.add(new JLabel(user.name));
-        infoPanel.add(new JLabel("Email"));
+      //  infoPanel.add(new JLabel("Name"));
+      //  infoPanel.add(new JLabel(user.name));
+        infoPanel.add(new JLabel("First Name"));
+        infoPanel.add(new JLabel(user.FirstName));
+        infoPanel.add(new JLabel("Second Name"));
+        infoPanel.add(new JLabel(user.SecondName));
+        infoPanel.add(new JLabel("Role"));
+        infoPanel.add(new JLabel(user.role));
+        infoPanel.add(new JLabel("E-mail"));
         infoPanel.add(new JLabel(user.email));
         infoPanel.add(new JLabel("Phone"));
         infoPanel.add(new JLabel(user.phone));
+        infoPanel.add(new JLabel("ID No"));
+        infoPanel.add(new JLabel(user.idno));
         infoPanel.add(new JLabel("Address"));
         infoPanel.add(new JLabel(user.address));
+        infoPanel.add(new JLabel("Date of Birth"));
+        infoPanel.add(new JLabel(user.dob));
 
         add(infoPanel, BorderLayout.NORTH);
 

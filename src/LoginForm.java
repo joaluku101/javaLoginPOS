@@ -106,11 +106,6 @@ public class LoginForm extends JFrame {
         final String DB_URL = "jdbc:mysql://localhost:3306/raiweb_solutions";
         final String USERNAME = "root";
         final String PASSWORD = "maragwe";
-
-       
-        
-        
-
         try {
 
             Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
@@ -134,13 +129,17 @@ public class LoginForm extends JFrame {
 
             if(resultSet.next()){
                 user = new User();
-                user.name = resultSet.getString("name");
+                user.FirstName = resultSet.getString("FirstName");
+                user.SecondName = resultSet.getString("SecondName");
+                user.role = resultSet.getString("role");
                 user.email = resultSet.getString("email");
                 user.phone = resultSet.getString("phone");
                 user.address = resultSet.getString("address");
                 user.password = resultSet.getString("password");
+                user.dob = resultSet.getString("dob");
+                user.idno = resultSet.getString("idno");
 
-                System.exit(ABORT);
+              //  System.exit(ABORT);
 
             }
 
