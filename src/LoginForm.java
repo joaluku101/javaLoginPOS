@@ -6,7 +6,7 @@ import java.sql.*;
 import javax.swing.*;
 
 public class LoginForm extends JFrame {
-    final private Font mainFont = new Font("Segoe print", Font.BOLD, 18);
+    final private Font mainFont = new Font("Segoe print", Font.BOLD, 15);
     JTextField tfEmail;
     JPasswordField pfPassword;
 
@@ -88,11 +88,9 @@ public class LoginForm extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // TODO Auto-generated method stub
 
-             //   SignupForm SignupForm = new SignupForm();
-             //   SignupForm.setVisible(true);
-
-                Sign sign = new Sign();
+             SignUpForm sign = new SignUpForm();
                 sign.setVisible(true);
+                dispose();
             }
 
         } );
